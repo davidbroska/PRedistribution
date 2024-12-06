@@ -11,7 +11,7 @@ n0 = nk * sqrt(p)
 message("Sample size in control condition: ", ceiling(n0))
 
 # Should sum to N
-2 * nk + n0
+p * nk + n0
 
 assignment_p = function(N, p){
   
