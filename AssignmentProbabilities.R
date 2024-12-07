@@ -17,7 +17,7 @@ assignment_p = function(N, p){
   
   n_k = N/(sqrt(p) + p)
   n_0 = n_k * sqrt(p)
-  N = n0 + p * n_k
+  N = n_0 + p * n_k
   
   data.frame(
     p_0 = n_0 / N,
@@ -37,4 +37,7 @@ tr = tribble(
   "P(redistribution to + moral)", probs$p_k/4,
 ) %>%  
   mutate(across(where(is.numeric), ~ round(.,3)))
+
+tr
 sum(tr$Probability)
+
