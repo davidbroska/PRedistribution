@@ -2,7 +2,7 @@ library(dplyr)
 
 # Define total sample size 
 N = 1000
-p = 3
+p = 6
 
 nk = N / (sqrt(p) + p)
 message("Sample size in kth treatment condition: ", ceiling(nk))
@@ -31,10 +31,10 @@ tr = tribble(
   "P(control)", probs$p_0,
   "P(predistribution)", probs$p_k,
   "P(predistribution + moral)", probs$p_k,
-  "P(redistribution from)", probs$p_k/4,
-  "P(redistribution from + moral)", probs$p_k/4,
-  "P(redistribution to)", probs$p_k/4,
-  "P(redistribution to + moral)", probs$p_k/4,
+  "P(redistribution from)", probs$p_k,
+  "P(redistribution from + moral)", probs$p_k,
+  "P(redistribution to)", probs$p_k,
+  "P(redistribution to + moral)", probs$p_k,
 ) %>%  
   mutate(across(where(is.numeric), ~ round(.,3)))
 
